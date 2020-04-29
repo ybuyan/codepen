@@ -9,19 +9,20 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
-<script>
+<script defer>
     /*
      **放在这里会导致Uncaught TypeError: Cannot read property 'style' of null
-     **执行顺序
+     **页面渲染问题
+     **https://www.jianshu.com/p/b73da4f1a9a7
      */
-    // const sHand = document.querySelector('.s');
-    // const mHand = document.querySelector('.m');
-    // const hHand = document.querySelector('.h');
+    const sHand = document.querySelector('.s');
+    const mHand = document.querySelector('.m');
+    const hHand = document.querySelector('.h');
 
     function setTime() {
-        const sHand = document.querySelector('.s');
-        const mHand = document.querySelector('.m');
-        const hHand = document.querySelector('.h');
+        // const sHand = document.querySelector('.s');
+        // const mHand = document.querySelector('.m');
+        // const hHand = document.querySelector('.h');
         const d = new Date();
         const s = d.getSeconds();
         const m = d.getMinutes();
