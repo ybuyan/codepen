@@ -9,34 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
-<script defer>
-    /*
-     **放在这里会导致Uncaught TypeError: Cannot read property 'style' of null
-     **页面渲染问题
-     **https://www.jianshu.com/p/b73da4f1a9a7
-     */
-    const sHand = document.querySelector('.s');
-    const mHand = document.querySelector('.m');
-    const hHand = document.querySelector('.h');
 
-    function setTime() {
-        // const sHand = document.querySelector('.s');
-        // const mHand = document.querySelector('.m');
-        // const hHand = document.querySelector('.h');
-        const d = new Date();
-        const s = d.getSeconds();
-        const m = d.getMinutes();
-        const h = d.getHours();
-
-        const sDeg = ((s / 60) * 360);
-        const mDeg = ((m / 60) * 360);
-        const hDeg = ((h / 12) * 360);
-        sHand.style.transform = `rotate( ${sDeg}deg )`;
-        mHand.style.transform = `rotate( ${mDeg}deg )`;
-        hHand.style.transform = `rotate( ${hDeg}deg )`;
-    }
-    setInterval(setTime, 1000)
-</script>
 <style>
     body {
         background-color: #74c4c8;
@@ -54,7 +27,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        /* vmin代表的意义？ */
+        /* 
+        ** vmin代表的意义？
+        ** https://www.jianshu.com/p/b04732d50c00
+         */
         width: 70vmin;
         height: 70vmin;
         border-radius: 50%;
@@ -65,7 +41,10 @@
     }
     
     .face::after {
-        /* 伪元素重点复习 */
+        /* 
+        ** 伪元素 https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-classes
+        ** 伪元素 https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-elements
+        */
         content: '';
         display: block;
         width: 3.5vmin;
@@ -289,5 +268,33 @@
         </div>
     </div>
 </body>
+<script defer>
+    /*
+     **放在这里会导致Uncaught TypeError: Cannot read property 'style' of null
+     **页面渲染问题
+     **https://www.jianshu.com/p/b73da4f1a9a7
+     */
+    const sHand = document.querySelector('.s');
+    const mHand = document.querySelector('.m');
+    const hHand = document.querySelector('.h');
+
+    function setTime() {
+        // const sHand = document.querySelector('.s');
+        // const mHand = document.querySelector('.m');
+        // const hHand = document.querySelector('.h');
+        const d = new Date();
+        const s = d.getSeconds();
+        const m = d.getMinutes();
+        const h = d.getHours();
+
+        const sDeg = ((s / 60) * 360);
+        const mDeg = ((m / 60) * 360);
+        const hDeg = ((h / 12) * 360);
+        sHand.style.transform = `rotate( ${sDeg}deg )`;
+        mHand.style.transform = `rotate( ${mDeg}deg )`;
+        hHand.style.transform = `rotate( ${hDeg}deg )`;
+    }
+    setInterval(setTime, 1000)
+</script>
 
 </html>
