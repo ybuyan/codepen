@@ -1,0 +1,19 @@
+{
+  "name": "codepen_css",
+  "version": "1.0.0",
+  "description": "css 基础",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ybuyan/codepen_css.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ybuyan/codepen_css/issues"
+  },
+  "homepage": "https://github.com/ybuyan/codepen_css#readme"
+}
