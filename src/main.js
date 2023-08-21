@@ -53,3 +53,11 @@ let init = (function() {
         $('#menus').html(li)
     })
 })()
+
+// this.io= new IntersectionObserver(
+//     (entries)=> {
+//     if (entries[0].intersectionRatio <= 0) return;
+//     this.seeMore();
+//     });
+//     // 开始观察
+//     this.io.observe(document.getElementById("more"));

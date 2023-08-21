@@ -1,67 +1,49 @@
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = './src/views'
+const htmlFolderPath = 'views'
+
+const chunks = [
+    'index', 
+    'picwall', 
+    'rotationMeun', 
+    'focusRotationChart', 
+    'sunAndMoon', 
+    'watermelonClock'
+]
+const pages = []
+const entry = {}
+const watchFiles = []
+chunks.forEach(item => {
+    if(item !== 'index') {
+        entry[item] = `${path}/${item}/main.js`
+        pages.push(
+            new HtmlWebpackPlugin({
+                filename: `${htmlFolderPath}/${item}/index.html`,
+                chunks: [item],
+                template: `${path}/${item}/index.html`,
+                inject: true,
+                outputPath: './docs'
+            })
+        )
+        watchFiles.push(`${path}/${item}/index.html`)
+    } else {
+        entry['index'] = './src/main.js'
+        pages.push(
+            new HtmlWebpackPlugin({
+                filename: 'index.html',
+                chunks: ['index'],
+                template: './src/index.html',
+                inject: true,
+                outputPath: './docs'
+            })
+        )
+        watchFiles.push('./src/index.html')
+    }
+})
 
 module.exports = {
-    entry: {
-        index: './src/main.js',
-        picwall: './src/views/picwall/main.js',
-        rotationMeun: './src/views/rotationMeun/main.js',
-        focusRotationChart: './src/views/focusRotationChart/main.js',
-        sunAndMoon: './src/views/sunAndMoon/main.js',
-        watermelonClock: './src/views/watermelonClock/main.js'
-    },
-    
-    pages: [
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            chunks: ['index'],
-            template: './src/index.html',
-            inject: true,
-            outputPath: './docs'
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'views/picwall/index.html',
-            chunks: ['picwall'],
-            template: './src/views/picwall/index.html',
-            inject: true,
-            outputPath: './docs'
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'views/rotationMeun/index.html',
-            chunks: ['rotationMeun'],
-            template: './src/views/rotationMeun/index.html',
-            inject: true,
-            outputPath: './docs'
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'views/focusRotationChart/index.html',
-            chunks: ['focusRotationChart'],
-            template: './src/views/focusRotationChart/index.html',
-            inject: true,
-            outputPath: './docs'
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'views/sunAndMoon/index.html',
-            chunks: ['sunAndMoon'],
-            template: './src/views/sunAndMoon/index.html',
-            inject: true,
-            outputPath: './docs'
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'views/watermelonClock/index.html',
-            chunks: ['watermelonClock'],
-            template: './src/views/watermelonClock/index.html',
-            inject: true,
-            outputPath: './docs'
-        }),
-    ],
-
-    watchFiles: [
-        './src/index.html',
-        './src/views/picwall/index.html',
-        './src/views/rotationMeun/index.html',
-        './src/views/focusRotationChart/index.html',
-        './src/views/watermelonClock/index.html',
-        './src/views/sunAndMoon/index.html',
-    ]
+    entry,
+    pages,
+    watchFiles
 }
