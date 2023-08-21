@@ -1,0 +1,22 @@
+[
+    {
+        "href": "./views/rotationMeun/index.html",
+        "name": "旋转菜单"
+    },
+    {
+        "href": "./views/picwall/index.html",
+        "name": "照片墙"
+    },
+    {
+        "href": "./views/focusRotationChart/index.html",
+        "name": "焦点轮播图"
+    },
+    {
+        "href": "./views/sunAndMoon/index.html",
+        "name": "日出日落交替"
+    },
+    {
+        "href": "./views/watermelonClock/index.html",
+        "name": "西瓜时钟"
+    }
+]

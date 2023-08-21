@@ -1,3 +1,4 @@
+import $ from '../../../static/js/jquery.js'
 function rotateZ(li,deg) {
 	$(li).css({transform:'rotateZ('+deg+'deg)'}).find('label').css({transform:'rotateZ('+-deg+'deg)'})
 }
