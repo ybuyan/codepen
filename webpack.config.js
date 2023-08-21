@@ -1,7 +1,6 @@
 const path = require("path");
 const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin'); // 打包静态文件夹
 const { pages, entry, watchFiles } = require('./config/page.config');
 
@@ -62,7 +61,6 @@ module.exports = {
                 },
             ],
         }),
-        new CleanWebpackPlugin(),
         new HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css',
