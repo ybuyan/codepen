@@ -16,7 +16,7 @@ module.exports = {
         }
     },
     output: {
-        path: path.resolve(__dirname, "./dist"),
+        path: path.resolve(__dirname, "./docs"),
         filename: 'js/[name].[chunkhash].js'
     },
     target: 'web',
@@ -58,7 +58,7 @@ module.exports = {
             patterns: [
                 {
                     from: path.resolve(__dirname, "./src/static"),
-                    to: path.resolve(__dirname, "./dist/static")
+                    to: path.resolve(__dirname, "./docs/static")
                 },
             ],
         }),

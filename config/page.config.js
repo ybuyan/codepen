@@ -17,42 +17,42 @@ module.exports = {
             chunks: ['index'],
             template: './src/index.html',
             inject: true,
-            outputPath: './dist'
+            outputPath: './docs'
         }),
         new HtmlWebpackPlugin({
             filename: 'views/picwall/index.html',
             chunks: ['picwall'],
             template: './src/views/picwall/index.html',
             inject: true,
-            outputPath: './dist'
+            outputPath: './docs'
         }),
         new HtmlWebpackPlugin({
             filename: 'views/rotationMeun/index.html',
             chunks: ['rotationMeun'],
             template: './src/views/rotationMeun/index.html',
             inject: true,
-            outputPath: './dist'
+            outputPath: './docs'
         }),
         new HtmlWebpackPlugin({
             filename: 'views/focusRotationChart/index.html',
             chunks: ['focusRotationChart'],
             template: './src/views/focusRotationChart/index.html',
             inject: true,
-            outputPath: './dist'
+            outputPath: './docs'
         }),
         new HtmlWebpackPlugin({
             filename: 'views/sunAndMoon/index.html',
             chunks: ['sunAndMoon'],
             template: './src/views/sunAndMoon/index.html',
             inject: true,
-            outputPath: './dist'
+            outputPath: './docs'
         }),
         new HtmlWebpackPlugin({
             filename: 'views/watermelonClock/index.html',
             chunks: ['watermelonClock'],
             template: './src/views/watermelonClock/index.html',
             inject: true,
-            outputPath: './dist'
+            outputPath: './docs'
         }),
     ],
 
