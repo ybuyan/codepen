@@ -1,0 +1,102 @@
+@import '../../static/css/reset.css';
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url(https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg);
+    background-size: cover;
+    font-size: 10px;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+
+    h1 {
+        font-size: 2.2rem;
+        line-height: 3.4rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 1px solid #ececec;
+        font-weight: 700;
+        padding-left: 2rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+
+    .effect-container {
+        .landIn {
+            margin: 0 4em;
+            font-size: 4em;
+            font-weight: 600;
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 1.8;
+            font-family: Lora, serif;
+            white-space: pre;
+
+            span {
+                animation: landIn 0.8s ease-out both;
+            }
+        }
+
+        @keyframes landIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .float-text-menu {
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+            margin: 0 4em;
+            font-size: 4em;
+            font-weight: 600;
+
+            li {
+                width: max-content;
+
+                a {
+                    display: flex;
+                    padding: 6px;
+                    color: white;
+                    font-family: Lato, sans-serif;
+                    text-decoration: none;
+                    overflow: hidden;
+
+                    span {
+                        position: relative;
+                        transition: 0.3s;
+
+                        &::before {
+                            position: absolute;
+                            content: attr(data-text);
+                            transform: translateY(130%);
+                        }
+                    }
+
+                    &:hover {
+                        span {
+                            transform: translateY(-130%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

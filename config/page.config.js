@@ -9,7 +9,8 @@ const chunks = [
     'rotationMeun', 
     'focusRotationChart', 
     'sunAndMoon', 
-    'watermelonClock'
+    'watermelonClock',
+    'textDynamicEffect'
 ]
 const pages = []
 const entry = {}

@@ -31,7 +31,6 @@ let init = (function() {
                 count -= 1
             } else {
                 const noOverlap = randomArr.every(v => Math.hypot(v.left - col, v.top - row) > 15)  //这里的主要目的就是来保证每次随机生成的点确定的图片位置不会有重叠
-                console.log(noOverlap)
                 if (noOverlap) {
                     randomArr.push({
                         left: col,

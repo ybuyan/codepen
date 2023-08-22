@@ -18,5 +18,9 @@
     {
         "href": "./views/watermelonClock/index.html",
         "name": "西瓜时钟"
+    },
+    {
+        "href": "./views/textDynamicEffect/index.html",
+        "name": "动态文字效果"
     }
 ]
