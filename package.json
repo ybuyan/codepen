@@ -36,5 +36,8 @@
     "sass-loader": "^13.3.2",
     "node-sass": "^5.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vue": "^2.7.14",
+    "vue-loader": "^15.9.6"
+  }
 }

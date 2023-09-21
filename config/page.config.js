@@ -10,7 +10,8 @@ const chunks = [
     'focusRotationChart', 
     'sunAndMoon', 
     'watermelonClock',
-    'textDynamicEffect'
+    'textDynamicEffect',
+    'long-list-scroll'
 ]
 const pages = []
 const entry = {}

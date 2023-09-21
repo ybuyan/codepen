@@ -3,6 +3,7 @@ const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlug
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin'); // 打包静态文件夹
 const { pages, entry, watchFiles } = require('./config/page.config');
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
     entry,
@@ -24,35 +25,42 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.js?$/,
-                exclude: /(node_modules)/,
-                loader: 'babel-loader'
-            },
-            {
-                test: /\.(css|scss)$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader", 'sass-loader'],
-            },
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: (url, resourcePath, context) => {
-                            // `resourcePath` is original absolute path to asset
-                            // `context` is directory where stored asset (`rootContext`) or `context` option
-                
-                            // To get relative path you can use
-                            const relativePath = path.dirname(path.relative('src', path.relative(context, resourcePath)));
-                            return `${relativePath}/${url}`;
-                          },
-                    },
-                }]
+          {
+            test:/\.vue$/,
+            use:{
+              loader:'vue-loader'
             }
+          },
+          {
+              test: /\.js?$/,
+              exclude: /(node_modules)/,
+              loader: 'babel-loader'
+          },
+          {
+              test: /\.(css|scss)$/i,
+              use: [MiniCssExtractPlugin.loader, "css-loader", 'sass-loader'],
+          },
+          {
+              test: /\.(png|jpg|gif|svg)$/,
+              use: [{
+                  loader: 'file-loader',
+                  options: {
+                      name: '[name].[ext]',
+                      outputPath: (url, resourcePath, context) => {
+                          // `resourcePath` is original absolute path to asset
+                          // `context` is directory where stored asset (`rootContext`) or `context` option
+              
+                          // To get relative path you can use
+                          const relativePath = path.dirname(path.relative('src', path.relative(context, resourcePath)));
+                          return `${relativePath}/${url}`;
+                        },
+                  },
+              }]
+          }
         ],
     },
     plugins: [
+      new VueLoaderPlugin(),
         new CopyWebpackPlugin({
             patterns: [
                 {
