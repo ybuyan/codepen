@@ -31,7 +31,7 @@ export default {
     },
     viewCount: {
       type: Number,
-      default: 20
+      default: 20000
     },
     rowHeight: {
       type: Number,
