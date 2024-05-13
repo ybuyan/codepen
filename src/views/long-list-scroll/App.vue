@@ -10,7 +10,6 @@
           {{ item.n }}
         </div>
       </div>
-      
     </div>
   </div>
 </template>
